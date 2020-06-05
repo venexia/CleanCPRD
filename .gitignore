@@ -1,4 +1,7 @@
-codelists/*
+codelists/creation/*
+codelists/csv/*
+codelists/stata/*
+codelists/excel/*
 covariates/*
 data/*
 documents/*

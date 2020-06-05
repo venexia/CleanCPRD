@@ -1,0 +1,1 @@
+This directory contains the codelists as excel files.
