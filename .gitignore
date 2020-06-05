@@ -12,6 +12,11 @@ covariates/eventlists/*
 covariates/patlists/*
 covariates/raw/*
 covariates/stata/*
+!covariates/README.md
+!covariates/csv/README.md
+!covariates/eventlists/README.md!
+covariates/patlists/README.md
+!covariates/stata/README.md
 data/*
 documents/*
 projects/*
