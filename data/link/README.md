@@ -1,0 +1,1 @@
+This directory contains the raw linked data from the CPRD in Stata data files.

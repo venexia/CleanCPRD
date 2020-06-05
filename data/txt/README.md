@@ -1,0 +1,1 @@
+This directory contains the raw data from the CPRD in text files, i.e. as received.
