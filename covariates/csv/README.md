@@ -1,0 +1,1 @@
+This directory contains the covariate codelists as csv files.

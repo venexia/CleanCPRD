@@ -1,0 +1,1 @@
+This directory contains the codelists for covariates as Stata data files.

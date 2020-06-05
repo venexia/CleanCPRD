@@ -1,0 +1,1 @@
+This directory contains patlists for covariates derived from the CPRD data.

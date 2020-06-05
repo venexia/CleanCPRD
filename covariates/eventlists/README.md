@@ -1,0 +1,1 @@
+This directory contains eventlists for covariates derived from the CPRD data.
