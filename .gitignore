@@ -3,5 +3,6 @@ covariates/*
 data/*
 documents/*
 projects/*
+!codelists/README.md
 !codelists/stata/README.md
 !codelists/excel/README.md
