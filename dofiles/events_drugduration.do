@@ -64,7 +64,7 @@ sum scriptlength_patmed_mode, d
 
 /* VMW: Year of birth required */
 
-merge m:1 patid using "$path/data/raw/patient_001.dta", keepusing(patid yob) keep(match master)
+merge m:1 patid using "$data/raw/patient_001.dta", keepusing(patid yob) keep(match master)
 drop _merge
 gen year_birth = yob + 1800
 

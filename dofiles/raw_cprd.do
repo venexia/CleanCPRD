@@ -74,30 +74,30 @@ quietly {
 
 * Add dates to additional detail files -----------------------------------------
 
-local clinicalfiles : dir "$path/data/raw" files "clinical_*.dta"
-local addfiles : dir "$path/data/raw" files "additional_*.dta"
+local clinicalfiles : dir "$data/raw" files "clinical_*.dta"
+local addfiles : dir "$data/raw" files "additional_*.dta"
 
-mkdir "$path/data/tmp"
+mkdir "$data/tmp"
 
 qui foreach clinical in `clinicalfiles' {
 	use patid adid eventdate sysdate using "$path/data/raw/`clinical'" ,clear
 	drop if adid==0
-	save "$path/data/tmp/tmp_`clinical'", replace
+	save "$data/tmp/tmp_`clinical'", replace
 }
 
-local clinicalfiles : dir "$path/data/raw" files "clinical_*.dta"
-local addfiles : dir "$path/data/raw" files "additional_*.dta"
+local clinicalfiles : dir "$data/raw" files "clinical_*.dta"
+local addfiles : dir "$data/raw" files "additional_*.dta"
 	
 foreach add in `addfiles' {
 	local clinicalfiles : dir "$path/data/raw" files "clinical_*.dta"
-	use "$path/data/raw/`add'" ,clear
-	save "$path/data/additional/dated_`add'", replace
+	use "$data/raw/`add'" ,clear
+	save "$data/additional/dated_`add'", replace
 	qui foreach clinical in `clinicalfiles' {
-		use "$path/data/additional/dated_`add'", clear
+		use "$data/additional/dated_`add'", clear
 		merge 1:1 patid adid using "$path/data/tmp/tmp_`clinical'", update keep(1 3 4)
 		drop _merge
-		save "$path/data/additional/dated_`add'", replace
+		save "$data/additional/dated_`add'", replace
 	}
 }
 
-!rmdir "$path/data/tmp" /s /q
+!rmdir "$data/tmp" /s /q

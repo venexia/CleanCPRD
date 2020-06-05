@@ -1,9 +1,10 @@
 * Perform basic setup ----------------------------------------------------------
 
-global path "E:/Dementia_CPRD_v2"
+global path ""
 global dofiles "$path/dofiles"
 global codelists "$path/codelists/stata"
 global data "$path/data"
+global documents "$path/documents"
 cd $path
 
 * Define commonly used code combinations ---------------------------------------
@@ -26,7 +27,7 @@ quietly{
 		if !_rc {
 			drop if missing(prodcode)
 			duplicates drop
-			merge 1:1 prodcode using "$path/data/meddict.dta", keep(match master) keepusing(prodcode drugsubstance)
+			merge 1:1 prodcode using "$data/meddict.dta", keep(match master) keepusing(prodcode drugsubstance)
 			drop _merge
 			save "$codelists/`file'", replace
 		}
