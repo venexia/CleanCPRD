@@ -19,8 +19,7 @@ run "$dofiles/codedict.do"
 
 quietly{
 	run "$dofiles/events_codes.do"
-	local files = "cataract.dta glaucoma.dta"
-	//local files : dir "$codelists" files "*.dta"
+	local files : dir "$codelists" files "*.dta"
 	foreach file in `files' {
 		use "$codelists/`file'", clear
 		capture confirm variable prodcode

@@ -1,0 +1,7 @@
+codelists/*
+covariates/*
+data/*
+documents/*
+projects/*
+!codelists/stata/README.md
+!codelists/excel/README.md
